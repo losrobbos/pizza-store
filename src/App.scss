@@ -30,5 +30,71 @@
 
 main {
   min-height: 70vh;
-  padding: 5vh 10vw;
+}
+
+header {
+  font-size: 2rem;
+  font-family: cursive;
+  text-transform: uppercase;
+}
+
+.pizzas {
+  width: 600px;  
+  margin: 5vh auto;
+}
+
+.pizza {
+  margin: 10px;
+  padding: 10px;
+  // border: 5px groove #282c34;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #282c34;
+  border: 5px groove #ccc;
+
+  // &:hover {
+  //   transition: 1s;
+  // }
+
+  display: flex;
+
+  img {
+    width: 200px;
+    height: 130px;
+    object-fit: contain;
+  }
+  .pizza-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pizza-name {
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .pizza-description {
+    line-height: 1.6rem;
+  }
+
+  .pizza-buy {
+    display: flex;
+    justify-content: center;
+
+    .price { 
+      font-weight: bold; 
+      display: grid;
+      place-items: center;
+      margin-right: 10px;
+    }
+
+    button {
+      background: #282c34;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+
 }

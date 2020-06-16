@@ -9,7 +9,7 @@ You will now create the first source of your future income: Your own online stor
 ### Stage 1 - Pizza List
 
 - Create a PizzaList component
-  - Define a list of products using useState
+  - Define an array of pizzas using useState
     - Use free pizza image links from pixabay, unsplash.it or -your-other-favorite-free-image-service
   - Render a list of Pizza components from that data
     - Pass in your data as prop to your pizza component please
