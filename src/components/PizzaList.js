@@ -8,7 +8,7 @@ const PizzaList = (props) => {
   // and out of that the data that I am interested
   const { pizzas } = useContext( PizzaContext )
 
-  let jsxPizzas = pizzas.map((pizza) => <Pizza key={pizza.key} pizza={pizza} />);
+  let jsxPizzas = pizzas.map((pizza) => <Pizza key={pizza.id} pizza={pizza} />);
 
   return <div className="pizzas">{jsxPizzas}</div>;
 };

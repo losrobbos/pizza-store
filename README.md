@@ -6,11 +6,24 @@ Now the time has come, my friend....
 
 You will now create the first source of your future income: Your own online store.
 
+### Stage 3 - Add cart state
+
+- Create a “cart” state in your Context - it should hold an array of bought pizzas
+  - use useState hook one more time to set that up
+- Create a function addToCart
+  - this function should add a product to your cart state
+- Export cart and addToCart in the value={} prop to make it available for your components
+
+Pizza component
+- Import the addToCart function from context
+- When clicking “Buy” button in your Pizza component
+  - add the pizza to your cart state in context
+  - console.log your cart data afterwards
 
 ### Stage 2 - Outsource your data to ContextAPI
 
 - Create a directory contexts
-- Create a file PizzaContext.js 
+- Create a file PizzaContext.js
   - Setup a Context & Provider
   - Outsource your pizza data to there
   - Export BOTH (!) - the Provider and the Context

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PizzaContext } from '../contexts/PizzaContext';
 
 const Pizza = (props) => {
-  // we receive: props.pizza
 
+  // we receive: props.pizza
   let { pizza } = props; //pluck out the pizza out of props
+  let { addPizzaToCart } = useContext(PizzaContext)
 
   return (
     <div className="pizza">
@@ -15,7 +17,7 @@ const Pizza = (props) => {
         <div className="pizza-description">{pizza.description}</div>
         <div className="pizza-buy">
           <div className="price">{pizza.price} &euro;</div>
-          <button>BUY NOW</button>
+          <button onClick={() => addPizzaToCart(pizza)}>BUY NOW</button>
         </div>
       </div>
     </div>
