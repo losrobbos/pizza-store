@@ -6,19 +6,43 @@ Now the time has come, my friend....
 
 You will now create the first source of your future income: Your own online store.
 
+We gonna use functional components only with React hooks + Context API as our central data store.
+
+### Stage 4 - Display cart
+
+Create a component Cart.js
+  - Grab the ordered pizzas from your context (= cart state)
+  - Display the products with title & price per item
+
+Router setup
+- Install react-router-dom
+- index.js: Wrap everything with BrowserRouter or HashRouter
+- App.js: Setup two routes
+  - Home "/" : here we show our pizza list
+  - Cart "/cart" : here we show our cart component
+- Create a Nav to jump between Pizzas and Cart routes
+
+Bonus:
+  - Display the total price of all pizzas in the cart
+
 ### Stage 3 - Add cart state
 
-- Create a “cart” state in your Context - it should hold an array of bought pizzas
+Context:
+
+- Create a “cart” state - it should hold an array of bought pizzas
   - use useState hook one more time to set that up
 - Create a function addToCart
   - this function should add a product to your cart state
 - Export cart and addToCart in the value={} prop to make it available for your components
 
-Pizza component
+Pizza component:
+
 - Import the addToCart function from context
 - When clicking “Buy” button in your Pizza component
   - add the pizza to your cart state in context
-  - console.log your cart data afterwards
+  - do so by creating a copy of your cart contents and append the pizza
+  - console.log your cart copy
+  - overwrite your cart with setCart and pass in the cart copy
 
 ### Stage 2 - Outsource your data to ContextAPI
 

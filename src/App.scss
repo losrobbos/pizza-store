@@ -1,5 +1,9 @@
 $mainColor : rgb(226, 145, 53);
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -8,7 +12,7 @@ $mainColor : rgb(226, 145, 53);
 .App-header {
   background-color: $mainColor;
   // background-color: #282c34;
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,10 +20,25 @@ $mainColor : rgb(226, 145, 53);
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: 'Rock Salt', cursive;
+
+  h1 {
+    margin-bottom: 0;
+  }
 }
 
 .App-link {
   color: #61dafb;
+}
+
+nav {
+  background: $mainColor;
+
+  a {
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 main {
@@ -32,9 +51,14 @@ header {
   text-transform: uppercase;
 }
 
-.pizzas {
-  width: 600px;  
+.pizzas, .cart {
   margin: 5vh auto;
+}
+.pizzas {
+  width: 600px;
+}
+.cart {
+  width: 450px;
 }
 
 .pizza {
@@ -94,4 +118,54 @@ header {
     }
   }
 
+
+  // delay message class switches by  
+  .msg {
+    padding: 5px;
+    transition: 1s;
+    // font-style: italic;
+    // background: orangered;
+    color: black;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  .msg-show {
+    opacity: 1;
+  }
+
+  .msg-hidden {
+    opacity: 0;
+  }
+
+}
+
+.cart {
+
+  .cart-item {
+    margin: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   
+    padding: 10px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 150px;
+      border-radius: 5px;
+    }
+    .name { font-size: 1.2rem;}
+    .price { font-size: 1.3rem; font-weight: bold; padding-right: 10px; }
+  }
+
+  button {
+    background: $mainColor;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+  }
 }

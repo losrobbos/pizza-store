@@ -1,11 +1,21 @@
 import React, { useContext } from 'react';
 import { PizzaContext } from '../contexts/PizzaContext';
+import { useState } from 'react';
 
 const Pizza = (props) => {
 
   // we receive: props.pizza
   let { pizza } = props; //pluck out the pizza out of props
   let { addPizzaToCart } = useContext(PizzaContext)
+  const [showMsg, setShowMsg] = useState(false)
+
+  const handleAddPizzaToCart = (pizza) => {
+    addPizzaToCart(pizza)
+    setShowMsg(true)
+    setTimeout(() => {
+      setShowMsg(false)
+    }, 3000)
+  }
 
   return (
     <div className="pizza">
@@ -17,8 +27,9 @@ const Pizza = (props) => {
         <div className="pizza-description">{pizza.description}</div>
         <div className="pizza-buy">
           <div className="price">{pizza.price} &euro;</div>
-          <button onClick={() => addPizzaToCart(pizza)}>BUY NOW</button>
-        </div>
+          <button onClick={() => handleAddPizzaToCart(pizza)}>BUY NOW</button>
+          <div className={`msg ${showMsg ? "msg-show" : "msg-hidden"}`}>Added to cart</div>
+        </div>        
       </div>
     </div>
   );

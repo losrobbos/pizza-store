@@ -31,6 +31,7 @@ const PizzaProvider = (props) => {
 
   const sharedData = {
     pizzas,
+    cart,
     addPizzaToCart
   }
 
