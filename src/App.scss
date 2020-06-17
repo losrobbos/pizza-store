@@ -1,20 +1,12 @@
+$mainColor : rgb(226, 145, 53);
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: $mainColor;
+  // background-color: #282c34;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -44,12 +36,14 @@ header {
 }
 
 .pizza {
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
   // border: 5px groove #282c34;
   border-radius: 5px;
-  box-shadow: 1px 1px 2px #282c34;
-  border: 5px groove #ccc;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+  // box-shadow: 1px 1px 2px #282c34;
+  // border: 1px groove red;
+  border: 1px groove #aaa;
 
   // &:hover {
   //   transition: 1s;
@@ -89,7 +83,8 @@ header {
     }
 
     button {
-      background: #282c34;
+      background: $mainColor;
+      // background: #282c34;
       color: white;
       font-weight: bold;
       padding: 5px;
