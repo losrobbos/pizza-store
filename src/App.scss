@@ -71,10 +71,6 @@ header {
   // border: 1px groove red;
   border: 1px groove #aaa;
 
-  // &:hover {
-  //   transition: 1s;
-  // }
-
   display: flex;
 
   img {
@@ -119,23 +115,18 @@ header {
   }
 
 
-  // delay message class switches by  
+  // delay message class switch by opacity
   .msg {
     padding: 5px;
-    transition: 1s;
-    // font-style: italic;
-    // background: orangered;
     color: black;
     font-weight: bold;
     font-size: 0.8rem;
+    transition: 1s;
+    opacity: 0;
   }
 
   .msg-show {
     opacity: 1;
-  }
-
-  .msg-hidden {
-    opacity: 0;
   }
 
 }

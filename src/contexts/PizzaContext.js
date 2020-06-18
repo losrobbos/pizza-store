@@ -9,7 +9,6 @@ export const PizzaContext = createContext()
 //    so components can pluck out the data they need
 const PizzaProvider = (props) => {
 
-  // Provider is the wrapper
   const Provider = PizzaContext.Provider
 
   const [ pizzas, setPizzas ] = useState([
@@ -21,12 +20,14 @@ const PizzaProvider = (props) => {
     { id: 6, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!", name: 'Teriyaki', price: 7.99, image: "https://cdn.pixabay.com/photo/2017/01/22/19/20/pizza-2000614__340.jpg" },
   ]);
 
+  // cart will hold an array of products
   const [ cart, setCart ] = useState([])
 
+  // add a pizza to the cart state array
   const addPizzaToCart = (pizza) => {
-    let pizzasInCart = [...cart, pizza]
-    setCart( pizzasInCart )
+    let pizzasInCart = [...cart, pizza] // add pizza to cart items
     console.log(pizzasInCart);
+    setCart( pizzasInCart )
   }
 
   const sharedData = {
