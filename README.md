@@ -8,19 +8,16 @@ You will now create the first source of your future income: Your own online stor
 
 ### Stage 1 - Pizza List
 
+- Create a component to display a pizza
+  - Display Image, title, description and price
+  - The data should come from props please
+  - Add a Buy now button
+
 - Create a PizzaList component
   - Define an array of pizzas using useState
     - Use free pizza image links from pixabay, unsplash.it or -your-other-favorite-free-image-service
   - Render a list of Pizza components from that data
     - Pass in your data as prop to your pizza component please
-
-- Create a component to display a pizza
-  - Display Image, title, description and price
-  - Add a Buy now button
-
-Bonus:
-- On buy click: Display a modal that item was added to cart
-
 
 
 ## Available Scripts
