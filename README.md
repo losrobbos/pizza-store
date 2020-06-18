@@ -48,7 +48,8 @@ Pizza component
 - Import the addToCart function from context
 - When clicking “Buy” button in your Pizza component
   - add the pizza to your cart state in context
-  - console.log your cart data afterwards
+  - view your state change in React Developer Tools
+    - Chrome > Inspect > Tab "Components" > hooks > State
 
 
 ### Stage 4 - Display cart
