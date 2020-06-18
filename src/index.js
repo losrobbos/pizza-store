@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import PizzasProvider from './contexts/PizzasContext';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <PizzasProvider>
     <App />
-  </React.StrictMode>,
+  </PizzasProvider>,
   document.getElementById('root')
 );
 
