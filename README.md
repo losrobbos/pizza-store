@@ -8,6 +8,52 @@ You will now create the first source of your future income: Your own online stor
 
 We gonna use functional components only with React hooks + Context API as our central data store.
 
+### Stage 1 - Pizza List
+
+Create a list of pizzas. So far no ContextAPI involved...
+
+- Create a component to display a pizza 
+  - Display Image, title, description and price
+  - The data should come from props please
+  - Add a "Buy" button
+
+- Create a PizzaList component
+  - Define a list of products using useState
+    - Use free pizza image links from pixabay, unsplash.it or -your-other-favorite-free-image-service
+  - Render a list of Pizza components from that data
+    - Pass in your data as prop to your pizza component please
+
+Hint: You can also start in your App.js file and code your list there, if that's easier for you. Once everything works, create the components listed above.
+
+### Stage 2 - Outsource your data to ContextAPI
+
+- Create a directory contexts
+- Create a file PizzaContext.js 
+  - Setup a Context & Provider
+  - Outsource your pizza data to there
+  - Export BOTH (!) - the Provider and the Context
+  - Export the pizza data in the value prop of the Provider (=> value={{ pizzas }}
+- index.js: Wrap your App with that Provider
+  - This way we make the data accessible in our whole App component
+- Grab your data in your PizzaList component using useContext
+
+
+### Stage 3 - Add cart state
+
+- Create a “cart” state in your Context - it should hold an array of bought pizzas
+  - use useState hook one more time to set that up
+- Create a function addToCart
+  - this function should add a product to your cart state
+- Export cart and addToCart in the value={} prop to make it available for your components
+
+Pizza component
+- Import the addToCart function from context
+- When clicking “Buy” button in your Pizza component
+  - add the pizza to your cart state in context
+  - view your state change in React Developer Tools
+    - Chrome > Inspect > Tab "Components" > hooks > State
+
+
 ### Stage 4 - Display cart
 
 Create a component Cart.js
@@ -22,55 +68,52 @@ Router setup
   - Cart "/cart" : here we show our cart component
 - Create a Nav to jump between Pizzas and Cart routes
 
-Bonus:
-  - Display the total price of all pizzas in the cart
 
-### Stage 3 - Add cart state
+### Bonus Tasks - if you ever have the time
 
-Context:
+Here some extras that you can continue working on to ace out your skillset.
 
-- Create a “cart” state - it should hold an array of bought pizzas
-  - use useState hook one more time to set that up
-- Create a function addToCart
-  - this function should add a product to your cart state
-- Export cart and addToCart in the value={} prop to make it available for your components
+#### Cart total
 
-Pizza component:
+Display the total price of all pizzas in your cart
 
-- Import the addToCart function from context
-- When clicking “Buy” button in your Pizza component
-  - add the pizza to your cart state in context
-  - do so by creating a copy of your cart contents and append the pizza
-  - console.log your cart copy
-  - overwrite your cart with setCart and pass in the cart copy
+Hints:
 
-### Stage 2 - Outsource your data to ContextAPI
-
-- Create a directory contexts
-- Create a file PizzaContext.js
-  - Setup a Context & Provider
-  - Outsource your pizza data to there
-  - Export BOTH (!) - the Provider and the Context
-  - Export the pizza data in the value prop of the Provider (=> value={{ pizzas }}
-- index.js: Wrap your App with that Provider
-  - This way we make the data accessible in our whole App component
-- Grab your data in your PizzaList component using useContext
+- Context: Create a function "getTotal"
+  - this should calculate the total sum of your products in cart
+  - export the function by putting it in the value prop of your provider
+  - import the function in the cart
 
 
-### Stage 1 - Pizza List
+#### Manage Quantities
 
-- Create a PizzaList component
-  - Define an array of pizzas using useState
-    - Use free pizza image links from pixabay, unsplash.it or -your-other-favorite-free-image-service
-  - Render a list of Pizza components from that data
-    - Pass in your data as prop to your pizza component please
+Cart state
+- when adding items to cart: add a quantity field
+- check if item to add is already in cart. If so: Increase quantity by 1
 
-- Create a component to display a pizza
-  - Display Image, title, description and price
-  - Add a Buy now button
+- Allow changing the quantity of items in the cart
+- Allow deleting items in the cart
 
-Bonus:
-- On buy click: Display a modal that item was added to cart
+
+#### Redirect
+
+On click "Buy item" => redirect to the cart page
+
+
+#### Product Search
+
+- Create a PizzaFilter component with one input for the search field
+- As you type in the input: Show pizzas that match search term dynamically
+
+
+#### Outsource data to API
+
+- Copy your pizzas array data to a pizzas.json file in directory “data”
+- Setup an API for your pizzas using JSON Server
+- Add a script to your package.json file for running the API
+- Context: Fetch the list of products from API
+  - use the useEffect hook for that (useEffect => replacement for componentDidMount in function components) 
+
 
 
 
