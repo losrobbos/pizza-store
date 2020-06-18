@@ -25,8 +25,8 @@ const PizzaProvider = (props) => {
 
   const addPizzaToCart = (pizza) => {
     let pizzasInCart = [...cart, pizza]
-    setCart( pizzasInCart )
     console.log(pizzasInCart);
+    setCart( pizzasInCart )
   }
 
   const sharedData = {

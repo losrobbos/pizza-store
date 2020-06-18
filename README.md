@@ -6,6 +6,36 @@ Now the time has come, my friend....
 
 You will now create the first source of your future income: Your own online store.
 
+### Stage 1 - Pizza List
+
+Create a list of pizzas. So far no ContextAPI involved...
+
+- Create a component to display a pizza 
+  - Display Image, title, description and price
+  - The data should come from props please
+  - Add a "Buy" button
+
+- Create a PizzaList component
+  - Define a list of products using useState
+    - Use free pizza image links from pixabay, unsplash.it or -your-other-favorite-free-image-service
+  - Render a list of Pizza components from that data
+    - Pass in your data as prop to your pizza component please
+
+Hint: You can also start in your App.js file and code your list there, if that's easier for you. Once everything works, create the components listed above.
+
+### Stage 2 - Outsource your data to ContextAPI
+
+- Create a directory contexts
+- Create a file PizzaContext.js 
+  - Setup a Context & Provider
+  - Outsource your pizza data to there
+  - Export BOTH (!) - the Provider and the Context
+  - Export the pizza data in the value prop of the Provider (=> value={{ pizzas }}
+- index.js: Wrap your App with that Provider
+  - This way we make the data accessible in our whole App component
+- Grab your data in your PizzaList component using useContext
+
+
 ### Stage 3 - Add cart state
 
 - Create a “cart” state in your Context - it should hold an array of bought pizzas
@@ -20,34 +50,20 @@ Pizza component
   - add the pizza to your cart state in context
   - console.log your cart data afterwards
 
-### Stage 2 - Outsource your data to ContextAPI
 
-- Create a directory contexts
-- Create a file PizzaContext.js
-  - Setup a Context & Provider
-  - Outsource your pizza data to there
-  - Export BOTH (!) - the Provider and the Context
-  - Export the pizza data in the value prop of the Provider (=> value={{ pizzas }}
-- index.js: Wrap your App with that Provider
-  - This way we make the data accessible in our whole App component
-- Grab your data in your PizzaList component using useContext
+### Stage 4 - Display cart
 
+Create a component Cart.js
+  - Grab the ordered pizzas from your context (= cart state)
+  - Display the products with title & price per item
 
-### Stage 1 - Pizza List
-
-- Create a PizzaList component
-  - Define an array of pizzas using useState
-    - Use free pizza image links from pixabay, unsplash.it or -your-other-favorite-free-image-service
-  - Render a list of Pizza components from that data
-    - Pass in your data as prop to your pizza component please
-
-- Create a component to display a pizza
-  - Display Image, title, description and price
-  - Add a Buy now button
-
-Bonus:
-- On buy click: Display a modal that item was added to cart
-
+Router setup
+- Install react-router-dom
+- index.js: Wrap everything with BrowserRouter or HashRouter
+- App.js: Setup two routes
+  - Home "/" : here we show our pizza list
+  - Cart "/cart" : here we show our cart component
+- Create a Nav to jump between Pizzas and Cart routes
 
 
 ## Available Scripts
