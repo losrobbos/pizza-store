@@ -6,6 +6,19 @@ Now the time has come, my friend....
 
 You will now create the first source of your future income: Your own online store.
 
+### Stage 2 - Outsource your data to ContextAPI
+
+- Create a directory contexts
+- Create a file PizzaContext.js 
+  - Setup a Context & Provider
+  - Outsource your pizza data to there
+  - Export BOTH (!) - the Provider and the Context
+  - Export the pizza data in the value prop of the Provider (=> value={{ pizzas }}
+- index.js: Wrap your App with that Provider
+  - This way we make the data accessible in our whole App component
+- Grab your data in your PizzaList component using useContext
+
+
 ### Stage 1 - Pizza List
 
 - Create a component to display a pizza
