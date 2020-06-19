@@ -12,7 +12,7 @@ const PizzaList = (props) => {
     { id: 6, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!", name: 'Teriyaki', price: 7.99, image: "https://cdn.pixabay.com/photo/2017/01/22/19/20/pizza-2000614__340.jpg" },
   ]);
 
-  let jsxPizzas = pizzas.map((pizza) => <Pizza key={pizza.key} pizza={pizza} />);
+  let jsxPizzas = pizzas.map((pizza) => <Pizza key={pizza.id} pizza={pizza} />);
 
   return <div className="pizzas">{jsxPizzas}</div>;
 };
