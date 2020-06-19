@@ -6,6 +6,7 @@ const Pizza = (props) => {
   // we receive: props.pizza
   let { pizza } = props; //pluck out the pizza out of props
   let { addPizzaToCart } = useContext(PizzaContext)
+  
   const [showMsg, setShowMsg] = useState(false)
 
   const handleAddPizzaToCart = (pizza) => {

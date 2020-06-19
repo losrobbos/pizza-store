@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Pizza Store</h1>
-        {/* &#128722; cart icon */}
       </header>
       <nav>
         <Link to="/">Pizzas</Link>
