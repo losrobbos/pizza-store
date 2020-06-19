@@ -6,6 +6,18 @@ Now the time has come, my friend....
 
 You will now create the first source of your future income: Your own online store.
 
+We will apply the modern React features Hooks & ContextAPI to get there.
+
+We will use ContextAPI as our central store for data and functions / actions to change that data. 
+
+And we will use React Hooks to code with functional components only. Hooks will "upgrade" our funkys to be able to manage state and lifecycle. 
+
+We will apply the following hooks:
+- useState -> to setup state variables in functional components
+- useContext -> to read data out of our central store (=context)
+- useEffect -> to fetch data from an API in functional components (=replaces componentDidMount)
+
+
 ### Stage 1 - Pizza List
 
 Create a list of pizzas. So far no ContextAPI involved...
