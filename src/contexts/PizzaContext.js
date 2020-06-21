@@ -23,17 +23,40 @@ const PizzaProvider = (props) => {
   // cart will hold an array of products
   const [ cart, setCart ] = useState([])
 
+  // calculate totals
+  const cartTotal = () => {
+    return cart.reduce((sum, item) => {
+      return (sum + item.quantity*item.price)
+    }, 0)
+  }
+
   // add a pizza to the cart state array
   const addPizzaToCart = (pizza) => {
-    let pizzasInCart = [...cart, pizza] // add pizza to cart items
-    console.log(pizzasInCart);
-    setCart( pizzasInCart )
+
+    let cartItems = [...cart]
+
+    // check if item already in cart
+    let cartItemFound = cartItems.find(item => item.id == pizza.id)
+
+    // if found => increase quantity by one
+    if(cartItemFound) {
+      cartItemFound.quantity++
+      setCart( cartItems )
+    }
+    // if not found - add item with quantity 1
+    else {
+      let cartItemNew = {...pizza, quantity: 1}
+      cartItems.push(cartItemNew) // add pizza to cart items
+      setCart( cartItems )
+    }
+
   }
 
   const sharedData = {
     pizzas,
     cart,
-    addPizzaToCart
+    addPizzaToCart,
+    cartTotal
   }
 
   // in props.children we have all components that we are wrapping

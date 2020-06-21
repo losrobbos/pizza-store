@@ -57,9 +57,6 @@ header {
 .pizzas {
   width: 600px;
 }
-.cart {
-  width: 450px;
-}
 
 .pizza {
   margin: 20px;
@@ -128,28 +125,44 @@ header {
   .msg-show {
     opacity: 1;
   }
-
 }
 
 .cart {
 
+  width: 600px;
+
   .cart-item {
-    margin: 5px 10px;
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-   
-    padding: 10px;
     
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
 
-    img {
-      width: 150px;
-      border-radius: 5px;
+    .quantity { font-size: 1.3rem; width: 10%; }
+
+    .image {
+      width: 30%;
+
+      img {
+        width: 100px;
+        border-radius: 5px;
+      }
     }
-    .name { font-size: 1.2rem;}
-    .price { font-size: 1.3rem; font-weight: bold; padding-right: 10px; }
+    .name { font-size: 1.2rem; width: 25%; }
+    .price { font-size: 1.3rem; width: 15% }
+    .price-total { font-size: 1.4rem; font-weight: bold; width: 20% }
+  }  
+
+  // reset styles for first cart entry (heading)
+  .cart-heading {
+    border: none;
+    .quantity, .name, .price, .price-total {
+      font-weight: normal;
+      font-size: 1rem;
+    }
   }
 
   button {
