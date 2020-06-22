@@ -24,6 +24,9 @@ const PizzaProvider = (props) => {
   // cart will hold an array of products
   const [ cart, setCart ] = useState([])
 
+  // state for holding the search term
+  const [ searchTerm, setSearchTerm ] = useState('')
+
   // calculate totals
   const cartTotal = () => {
     let sum = cart.reduce((sum, item) => {
@@ -69,13 +72,23 @@ const PizzaProvider = (props) => {
 
   }
 
+  const searchPizzas = (searchTerm) => {
+    if(!searchTerm) {
+      return pizzas
+    }
+    searchTerm = searchTerm.toLowerCase()
+    return pizzas.filter(item => item.name.toLowerCase().includes(searchTerm))
+  }
+
   const sharedData = {
     pizzas,
     cart,
     addPizzaToCart,
     updateQuantity,
     deleteItem,
-    cartTotal
+    cartTotal,
+    searchTerm, setSearchTerm,
+    searchPizzas
   }
 
   // in props.children we have all components that we are wrapping

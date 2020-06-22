@@ -3,6 +3,7 @@ import './App.scss';
 import PizzaList from './components/PizzaList';
 import { Route, Link } from 'react-router-dom';
 import Cart from './components/Cart';
+import PizzaSearch from './components/PizzaSearch';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Link to="/">Pizzas</Link>
         <Link to="/cart">Cart &#128722;</Link>
       </nav>
+      <PizzaSearch></PizzaSearch>
       <main>
         <Route exact path="/">
           <PizzaList></PizzaList>

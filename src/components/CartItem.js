@@ -3,7 +3,7 @@ import { round } from '../helpers';
 
 const CartItem = ({ item, updateQuantity, deleteItem }) => {
   
-  // console.log(`Rendered item: ${item.id}`)
+  console.log(`Rendered item: ${item.id}`)
 
   return (
     // display all pizzas I have in my cart
