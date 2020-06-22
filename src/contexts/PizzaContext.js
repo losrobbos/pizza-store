@@ -1,4 +1,5 @@
 import React, {createContext, useState} from 'react';
+import { round } from '../helpers';
 
 // Context = comparable to Redux Store
 export const PizzaContext = createContext()
@@ -25,9 +26,25 @@ const PizzaProvider = (props) => {
 
   // calculate totals
   const cartTotal = () => {
-    return cart.reduce((sum, item) => {
+    let sum = cart.reduce((sum, item) => {
       return (sum + item.quantity*item.price)
     }, 0)
+    return round(sum)
+  }
+
+  const updateQuantity = (pizzaId, quantityNew) => {
+    let cartUpdated = cart.map(pizza => {
+      if(pizza.id == pizzaId) {
+        pizza.quantity = quantityNew
+      }
+      return pizza
+    })
+    setCart(cartUpdated)
+  }
+
+  const deleteItem = (pizzaId) => {
+    let cartUpdated = cart.filter(pizza => pizza.id != pizzaId)
+    setCart(cartUpdated)
   }
 
   // add a pizza to the cart state array
@@ -56,6 +73,8 @@ const PizzaProvider = (props) => {
     pizzas,
     cart,
     addPizzaToCart,
+    updateQuantity,
+    deleteItem,
     cartTotal
   }
 

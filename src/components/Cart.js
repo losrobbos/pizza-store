@@ -1,11 +1,20 @@
 import React from 'react';
 import { useContext } from 'react';
 import { PizzaContext } from '../contexts/PizzaContext';
+import CartItem from './CartItem';
 
 const Cart = () => {
 
   // read cart with all yummy pizzas I decided to eat soon 
-  const { cart, cartTotal } = useContext(PizzaContext);
+  const { cart, cartTotal, updateQuantity, deleteItem } = useContext(PizzaContext);
+
+  let jsxCartItems = cart.map((pizza) => (
+    <CartItem key={pizza.id} item={pizza} 
+      updateQuantity={updateQuantity}
+      deleteItem={deleteItem}
+    ></CartItem>
+  ));
+
 
   let jsxCartHeader = <div className="cart-item cart-heading">
     <div className="quantity">Quantity</div>
@@ -13,34 +22,25 @@ const Cart = () => {
     <div className="name">Name</div>
     <div className="price" >Price</div>
     <div className="price-total">Item Total</div>
+    <div className="delete"></div>
   </div>
 
-  let jsxCartTotal = <div classname="cart-total">
-    { cartTotal() } &euro;
+  let jsxCartTotal = <div className="cart-total">
+    <div> </div>
+    <div>{ cartTotal() } &euro;</div>
+    <div> </div>
   </div>
-
-
-  // display all pizzas I have in my cart
-  let jsxCart = cart.map((pizza) => (
-    <div className="cart-item">
-      <div className="quantity" >{pizza.quantity} x</div>
-      <div className="image"><img src={pizza.image} alt={pizza.name} /></div>
-      <div className="name">{pizza.name}</div>
-      <div className="price" >{pizza.price} &euro;</div>
-      <div className="price-total">{pizza.price * pizza.quantity} &euro;</div>
-    </div>
-  ));
 
   return (
     <div className="cart">
       <h2>Your cart</h2>
-      <div classname="cart-contents">{
+      <div className="cart-contents">{
         cart.length > 0 ? 
         <>
           {jsxCartHeader}
-          {jsxCart}
+          {jsxCartItems}
           {jsxCartTotal}
-        </> 
+        </>
         : 
         <p>Cart has no contents. Please buy pizza now</p>
       }
