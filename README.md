@@ -8,6 +8,10 @@ You will now create the first source of your future income: Your own online stor
 
 We will apply the modern React features Hooks & ContextAPI to get there.
 
+Demo on end result: https://pizza-store-two.vercel.app/
+
+### Intro
+
 We will use ContextAPI as our central store for data and functions / actions to change that data. 
 
 And we will use React Hooks to code with functional components only. With functions we get out of the classes "this" hell where we have to "thisify" almost anything, which makes our code very wordy and hard to read, once it gets more complex, especially in forms. But funkys have no state and lifecycle by default. Hooks will "upgrade" our funkys to be able to manage state and lifecycle. 
