@@ -10,6 +10,8 @@ We will apply the modern React features Hooks & ContextAPI to get there.
 
 Demo on end result: https://pizza-store-two.vercel.app/
 
+Follow the branches in this repo, where the project is developed in steps.
+
 ### Intro
 
 We will use ContextAPI as our central store for data and functions / actions to change that data. 
