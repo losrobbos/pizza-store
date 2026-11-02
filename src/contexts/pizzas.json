@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!",
+        "name": "Hawaii",
+        "price": 5.99,
+        "image": "/pizza-hawaii.jpg"
+    },
+    {
+        "id": 2,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!",
+        "name": "Quattro formaggi",
+        "price": 4.99,
+        "image": "/pizza-quattro-formaggi.jpg"
+    },
+    {
+        "id": 3,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!",
+        "name": "Vegetale",
+        "price": 4.99,
+        "image": "/pizza-vegetale.jpg"
+    },
+    {
+        "id": 4,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!",
+        "name": "Margherita",
+        "price": 3.99,
+        "image": "/pizza-margherita.jpg"
+    },
+    {
+        "id": 5,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!",
+        "name": "Salami",
+        "price": 5.99,
+        "image": "/pizza-salami.jpg"
+    },
+    {
+        "id": 6,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, molestias!",
+        "name": "Teriyaki",
+        "price": 7.99,
+        "image": "/pizza-teriyaki.jpg"
+    }
+]
