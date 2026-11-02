@@ -131,6 +131,94 @@ On click "Buy item" => redirect to the cart page
   - use the useEffect hook for that (useEffect => replacement for componentDidMount in function components) 
 
 
+- Create a directory contexts
+- Create a file PizzaContext.js 
+  - Setup a Context & Provider
+  - Outsource your pizza data to there
+  - Export BOTH (!) - the Provider and the Context
+  - Export the pizza data in the value prop of the Provider (=> value={{ pizzas }}
+- index.js: Wrap your App with that Provider
+  - This way we make the data accessible in our whole App component
+- Grab your data in your PizzaList component using useContext
+
+
+### Stage 3 - Add cart state
+
+- Create a “cart” state in your Context - it should hold an array of bought pizzas
+  - use useState hook one more time to set that up
+- Create a function addToCart
+  - this function should add a product to your cart state
+- Export cart and addToCart in the value={} prop to make it available for your components
+
+Pizza component
+- Import the addToCart function from context
+- When clicking “Buy” button in your Pizza component
+  - add the pizza to your cart state in context
+  - view your state change in React Developer Tools
+    - Chrome > Inspect > Tab "Components" > hooks > State
+
+
+### Stage 4 - Display cart
+
+Create a component Cart.js
+  - Grab the ordered pizzas from your context (= cart state)
+  - Display the products with title & price per item
+
+Router setup
+- Install react-router-dom
+- index.js: Wrap everything with BrowserRouter or HashRouter
+- App.js: Setup two routes
+  - Home "/" : here we show our pizza list
+  - Cart "/cart" : here we show our cart component
+- Create a Nav to jump between Pizzas and Cart routes
+
+
+### Bonus Tasks - if you ever have the time
+
+Here some extras that you can continue working on to ace out your skillset.
+
+#### Cart total
+
+Display the total price of all pizzas in your cart
+
+Hints:
+
+- Context: Create a function "getTotal"
+  - this should calculate the total sum of your products in cart
+  - export the function by putting it in the value prop of your provider
+  - import the function in the cart
+
+
+#### Manage Quantities
+
+Cart state
+- when adding items to cart: add a quantity field
+- check if item to add is already in cart. If so: Increase quantity by 1
+
+- Allow changing the quantity of items in the cart
+- Allow deleting items in the cart
+
+
+#### Redirect
+
+On click "Buy item" => redirect to the cart page
+
+
+#### Product Search
+
+- Create a PizzaFilter component with one input for the search field
+- As you type in the input: Show pizzas that match search term dynamically
+
+
+#### Outsource data to API
+
+- Copy your pizzas array data to a pizzas.json file in directory “data”
+- Setup an API for your pizzas using JSON Server
+- Add a script to your package.json file for running the API
+- Context: Fetch the list of products from API
+  - use the useEffect hook for that (useEffect => replacement for componentDidMount in function components) 
+
+
 ## Available Scripts
 
 In the project directory, you can run:
