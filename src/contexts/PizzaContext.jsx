@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react';
+import {createContext, useState} from 'react';
 import { round } from '../helpers';
 
 // Context = comparable to Redux Store
