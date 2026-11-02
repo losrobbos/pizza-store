@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 import Pizza from './Pizza';
 import { PizzaContext } from '../contexts/PizzaContext'
 

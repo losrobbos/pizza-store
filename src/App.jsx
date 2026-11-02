@@ -1,7 +1,6 @@
-import React from 'react';
 import './App.scss';
 import PizzaList from './components/PizzaList';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Routes } from 'react-router-dom';
 import Cart from './components/Cart';
 import PizzaSearch from './components/PizzaSearch';
 
@@ -17,12 +16,10 @@ function App() {
       </nav>
       <PizzaSearch></PizzaSearch>
       <main>
-        <Route exact path="/">
-          <PizzaList></PizzaList>
-        </Route>
-        <Route path="/cart">
-          <Cart></Cart>
-        </Route>
+        <Routes>
+          <Route path="/" element={<PizzaList />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
       </main>
     </div>
   );

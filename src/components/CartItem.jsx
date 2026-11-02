@@ -1,4 +1,3 @@
-import React from 'react';
 import { round } from '../helpers';
 
 const CartItem = ({ item, updateQuantity, deleteItem }) => {
@@ -19,7 +18,7 @@ const CartItem = ({ item, updateQuantity, deleteItem }) => {
         <div className="name">{item.name}</div>
         <div className="price" >{item.price} &euro;</div>
         <div className="price-total">{round(item.price * item.quantity)} &euro;</div>
-        <div className="delete" onClick={() => deleteItem(item.id)}>&#128465;</div>
+        <div className="delete" onClick={() => deleteItem(item.id)}>&#10060;</div>
       </div>
   );
 }
